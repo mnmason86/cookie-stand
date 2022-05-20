@@ -13,7 +13,7 @@ for (let i = 0; i<dailyHours.length; i++){
   let hour = dailyHours[i];
 
   let hourLi = document.createElement('li');
-  hourLi.innerText = `${hour}`;
+  hourLi.innerText = `${hour}: ${randBetween(23,65)*6.3} cookies`;
   document.getElementById('seattleHours').appendChild(hourLi);
 }
 
@@ -21,7 +21,7 @@ for (let i = 0; i<dailyHours.length; i++){
   let hour = dailyHours[i];
 
   let hourLi = document.createElement('li');
-  hourLi.innerText = `${hour}`;
+  hourLi.innerText = `${hour}: ${randBetween(3,24)*1.2} cookies`;
   document.getElementById('tokyoHours').appendChild(hourLi);
 }
 
@@ -29,7 +29,7 @@ for (let i = 0; i<dailyHours.length; i++){
   let hour = dailyHours[i];
 
   let hourLi = document.createElement('li');
-  hourLi.innerText = `${hour}`;
+  hourLi.innerText = `${hour}: ${randBetween(11,38)*3.7} cookies`;
   document.getElementById('dubaiHours').appendChild(hourLi);
 }
 
@@ -37,18 +37,17 @@ for (let i = 0; i<dailyHours.length; i++){
   let hour = dailyHours[i];
 
   let hourLi = document.createElement('li');
-  hourLi.innerText = `${hour}`;
+  hourLi.innerText = `${hour}: ${randBetween(20,38)*2.3} cookies`;
   document.getElementById('parisHours').appendChild(hourLi);
 }
 for (let i = 0; i<dailyHours.length; i++){
   let hour = dailyHours[i];
 
   let hourLi = document.createElement('li');
-  hourLi.innerText = `${hour}`;
+  hourLi.innerText = `${hour}: ${randBetween(2,16)*4.6} cookies`;
   document.getElementById('limaHours').appendChild(hourLi);
 }
 
 
 
 
-// Seattle stats: min customers: 23, max customers: 65, avg cookies/customer: 6.3
