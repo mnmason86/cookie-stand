@@ -1,0 +1,21 @@
+html {
+  font-size: 16px;
+
+}
+
+h1{
+  display:block;
+  margin:auto;
+  padding: 2em;
+  font-size: 45px;
+  text-align: center;
+  background-color: rgb(24, 65, 101);
+  color: salmon;
+  border-style: dotted white;
+}
+h2{
+  display: inline;
+  margin:auto;
+  padding:2em;
+
+}
