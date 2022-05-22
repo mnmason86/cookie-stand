@@ -37,17 +37,36 @@ h2{
   padding:1em;
   background-color: salmon;
 }
-div{
+table{
+  margin: auto;
+}
+tr{
+  display: block;
   text-align: center;
-  margin: 2em;
+  margin: auto;
+  font-size: 1em;
+  font-weight: bold;
 }
-ul {
-  margin-top: 2em;
+th{
+  border: solid black .5px; 
+  margin: auto;
 }
-li{
-  color: rgb(24, 65, 101);
-  font-size: 18px;
-  padding:.3em;
+#blank-td{
+  border-right: solid black 1px;
+  border-top:solid black 2px;
+  border-left:solid black 2px;
+  border-bottom:solid black 2px;
+  color:rgb(212, 213, 222);
+}
+td{
+  border: solid black 1px;
+  padding: .5em;
+}
+
+#daily-td{
+  border-top: solid black 1.5px;
+  border-right: solid black 2px;
+  border-bottom: solid black 1.5px;
 }
 footer{
   display: block;
