@@ -37,11 +37,11 @@ function sumArray (array){
 // Daily Hours Table
 
 StoreLocation.prototype.renderHours = function(){
-  let rowContainer = document.getElementById('hours-row');
+  let rowContainer = document.getElementById('hourly-sales');
 
   let rowData = document.createElement('tr');
 
-  let blankCell = document.createElement('td');
+  let blankCell = document.createElement('th');
   blankCell.innerText = '';
   rowData.appendChild(blankCell);
 
@@ -59,7 +59,7 @@ StoreLocation.prototype.renderHours = function(){
 
 StoreLocation.prototype.renderHours();
 
-// Seattle Location Row for Table
+// Location Rows for Table - Render function
 
 StoreLocation.prototype.render = function(){
   let cookieSales = [];

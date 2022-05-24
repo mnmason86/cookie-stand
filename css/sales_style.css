@@ -39,7 +39,19 @@ h2{
 }
 
 table{
+  display:block;
   margin: auto;
+
+}
+tbody tr th tr td{
+  padding-top: .75rem;
+  padding-bottom: 0rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+tbody tr tr th{
+  padding-left: .658rem;
+  padding-right: .658rem;
 }
 
 th{
@@ -49,20 +61,22 @@ th{
 
 td{
   border: solid black 1px;
-  padding: .5em;
 }
 
-#daily-td{
-  border-top: solid black 1.5px;
-  border-right: solid black 2px;
-  border-bottom: solid black 1.5px;
+#hours-row td{
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
-#seattle-sales t{
-  display: block;
-  margin: auto;
+
+#hourly-sales tr td{
+color: blue;
+padding-top: .5rem;
+padding-bottom: .5rem;
+padding-left: 1rem;
+padding-right: 1rem;
+}  
   
-  
-}
+
 footer{
   display: block;
   margin: auto;
