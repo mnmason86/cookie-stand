@@ -37,27 +37,16 @@ h2{
   padding:1em;
   background-color: salmon;
 }
+
 table{
   margin: auto;
 }
-tr{
-  display: block;
-  text-align: center;
-  margin: auto;
-  font-size: 1em;
-  font-weight: bold;
-}
+
 th{
   border: solid black .5px; 
   margin: auto;
 }
-#blank-td{
-  border-right: solid black 1px;
-  border-top:solid black 2px;
-  border-left:solid black 2px;
-  border-bottom:solid black 2px;
-  color:rgb(212, 213, 222);
-}
+
 td{
   border: solid black 1px;
   padding: .5em;
@@ -67,6 +56,12 @@ td{
   border-top: solid black 1.5px;
   border-right: solid black 2px;
   border-bottom: solid black 1.5px;
+}
+#seattle-sales t{
+  display: block;
+  margin: auto;
+  
+  
 }
 footer{
   display: block;
