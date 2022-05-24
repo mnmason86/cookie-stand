@@ -41,6 +41,10 @@ StoreLocation.prototype.renderHours = function(){
 
   let rowData = document.createElement('tr');
 
+  let blankCell = document.createElement('td');
+  blankCell.innerText = '';
+  rowData.appendChild(blankCell);
+
   for (let i = 0; i < dailyHours.length; i++){
     let dataCell = document.createElement('td');
     dataCell.innerText = dailyHours[i];
@@ -57,20 +61,20 @@ StoreLocation.prototype.renderHours();
 
 // Seattle Location Row for Table
 
-StoreLocation.prototype.renderSeattle = function(){
+StoreLocation.prototype.render = function(){
   let cookieSales = [];
-  let bodyContainer = document.getElementById('seattle-sales');
+  let bodyContainer = document.getElementById('hourly-sales');
 
   let locationRow = document.createElement('tr');
   bodyContainer.appendChild(locationRow);
 
-  let seattleRow = document.createElement('th');
-  seattleRow.innerText = seattleLocation.site;
-  locationRow.appendChild(seattleRow);
+  let locationCell = document.createElement('th');
+  locationCell.innerText = this.site;
+  locationRow.appendChild(locationCell);
 
   for(let j = 0; j < dailyHours.length; j++){
-    let custPerHour = Math.round(seattleLocation.minCust + Math.random() * (seattleLocation.maxCust - seattleLocation.minCust));
-    let hourCookies = Math.round(custPerHour * seattleLocation.avgCookies);
+    let custPerHour = Math.round(this.minCust + Math.random() * (this.maxCust - this.minCust));
+    let hourCookies = Math.round(custPerHour * this.avgCookies);
     cookieSales.push(hourCookies);
 
     let locationData = document.createElement('td');
@@ -84,128 +88,11 @@ StoreLocation.prototype.renderSeattle = function(){
   locationRow.appendChild(locationTotal);
 };
 
-StoreLocation.prototype.renderSeattle();
+seattleLocation.render();
+tokyoLocation.render();
+dubaiLocation.render();
+parisLocation.render();
+limaLocation.render();
 
-// Tokyo Location Row for Table
 
-StoreLocation.prototype.renderTokyo = function(){
-  let cookieSales = [];
-  let bodyContainer = document.getElementById('tokyo-sales');
-
-  let locationRow = document.createElement('tr');
-  bodyContainer.appendChild(locationRow);
-
-  let tokyoRow = document.createElement('th');
-  tokyoRow.innerText = tokyoLocation.site;
-  locationRow.appendChild(tokyoRow);
-
-  for(let j = 0; j < dailyHours.length; j++){
-    let custPerHour = Math.round(tokyoLocation.minCust + Math.random() * (tokyoLocation.maxCust - tokyoLocation.minCust));
-    let hourCookies = Math.round(custPerHour * tokyoLocation.avgCookies);
-    cookieSales.push(hourCookies);
-
-    let locationData = document.createElement('td');
-    locationData.innerText = hourCookies;
-    locationRow.appendChild(locationData);
-  }
-  sumArray(cookieSales);
-
-  let locationTotal = document.createElement('td');
-  locationTotal.innerText = sumArray(cookieSales);
-  locationRow.appendChild(locationTotal);
-};
-
-StoreLocation.prototype.renderTokyo();
-
-// Dubai Location Row for Table
-
-StoreLocation.prototype.renderDubai = function(){
-  let cookieSales = [];
-  let bodyContainer = document.getElementById('dubai-sales');
-
-  let locationRow = document.createElement('tr');
-  bodyContainer.appendChild(locationRow);
-
-  let dubaiRow = document.createElement('th');
-  dubaiRow.innerText = dubaiLocation.site;
-  locationRow.appendChild(dubaiRow);
-
-  for(let j = 0; j < dailyHours.length; j++){
-    let custPerHour = Math.round(dubaiLocation.minCust + Math.random() * (dubaiLocation.maxCust - dubaiLocation.minCust));
-    let hourCookies = Math.round(custPerHour * dubaiLocation.avgCookies);
-    cookieSales.push(hourCookies);
-
-    let locationData = document.createElement('td');
-    locationData.innerText = hourCookies;
-    locationRow.appendChild(locationData);
-  }
-  sumArray(cookieSales);
-
-  let locationTotal = document.createElement('td');
-  locationTotal.innerText = sumArray(cookieSales);
-  locationRow.appendChild(locationTotal);
-};
-
-StoreLocation.prototype.renderDubai();
-
-// Paris Location Row for Table
-
-StoreLocation.prototype.renderParis = function(){
-  let cookieSales = [];
-  let bodyContainer = document.getElementById('paris-sales');
-
-  let locationRow = document.createElement('tr');
-  bodyContainer.appendChild(locationRow);
-
-  let parisRow = document.createElement('th');
-  parisRow.innerText = parisLocation.site;
-  locationRow.appendChild(parisRow);
-
-  for(let j = 0; j < dailyHours.length; j++){
-    let custPerHour = Math.round(parisLocation.minCust + Math.random() * (parisLocation.maxCust - parisLocation.minCust));
-    let hourCookies = Math.round(custPerHour * parisLocation.avgCookies);
-    cookieSales.push(hourCookies);
-
-    let locationData = document.createElement('td');
-    locationData.innerText = hourCookies;
-    locationRow.appendChild(locationData);
-  }
-  sumArray(cookieSales);
-
-  let locationTotal = document.createElement('td');
-  locationTotal.innerText = sumArray(cookieSales);
-  locationRow.appendChild(locationTotal);
-};
-
-StoreLocation.prototype.renderParis();
-
-// Lima Location Row for Table
-
-StoreLocation.prototype.renderLima = function(){
-  let cookieSales = [];
-  let bodyContainer = document.getElementById('lima-sales');
-
-  let locationRow = document.createElement('tr');
-  bodyContainer.appendChild(locationRow);
-
-  let limaRow = document.createElement('th');
-  limaRow.innerText = limaLocation.site;
-  locationRow.appendChild(limaRow);
-
-  for(let j = 0; j < dailyHours.length; j++){
-    let custPerHour = Math.round(limaLocation.minCust + Math.random() * (limaLocation.maxCust - limaLocation.minCust));
-    let hourCookies = Math.round(custPerHour * limaLocation.avgCookies);
-    cookieSales.push(hourCookies);
-
-    let locationData = document.createElement('td');
-    locationData.innerText = hourCookies;
-    locationRow.appendChild(locationData);
-  }
-  sumArray(cookieSales);
-
-  let locationTotal = document.createElement('td');
-  locationTotal.innerText = sumArray(cookieSales);
-  locationRow.appendChild(locationTotal);
-};
-
-StoreLocation.prototype.renderLima();
+// Hourly totals Row for Table
