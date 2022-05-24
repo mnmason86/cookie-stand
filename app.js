@@ -24,7 +24,7 @@ let storeLocations = [seattleLocation, tokyoLocation, dubaiLocation, parisLocati
 
 let dailyHours = ['6:00 am','7:00 am','8:00 am','9:00 am','10:00 am','11:00 am','12:00 pm','1:00 pm','2:00 pm','3:00 pm','4:00 pm','5:00 pm','6:00 pm','7:00 pm','8:00 pm'];
 
-// Total Daily Sales function
+// Function to sum an Array
 
 function sumArray (array){
   let sum = 0;
@@ -60,9 +60,9 @@ StoreLocation.prototype.renderHours = function(){
 StoreLocation.prototype.renderHours();
 
 // Location Rows for Table - Render function
-
+let cookieSales = [];
 StoreLocation.prototype.render = function(){
-  let cookieSales = [];
+
   let bodyContainer = document.getElementById('hourly-sales');
 
   let locationRow = document.createElement('tr');
@@ -94,5 +94,16 @@ dubaiLocation.render();
 parisLocation.render();
 limaLocation.render();
 
+// Hourly totals from all stores
 
-// Hourly totals Row for Table
+
+StoreLocation.prototype.calculateHourTotals = function(){
+  let rowContainer = document.getElementById('hourly-sales');
+  let rowData = document.createElement('tr');
+
+  let allStores = document.createElement('th');
+  allStores.innerText = 'All Stores';
+  rowData.appendChild(allStores);
+};
+
+// How to get hourly totals???

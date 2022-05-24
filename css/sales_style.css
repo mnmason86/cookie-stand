@@ -55,12 +55,12 @@ tbody tr tr th{
 }
 
 th{
-  border: solid black .5px; 
+  border: solid rgb(187, 63, 49) .5px; 
   margin: auto;
 }
 
 td{
-  border: solid black 1px;
+  border: solid rgb(187, 63, 49) 1px;
 }
 
 #hours-row td{
