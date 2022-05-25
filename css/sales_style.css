@@ -37,18 +37,31 @@ h2{
   padding:1em;
   background-color: salmon;
 }
-div{
-  text-align: center;
-  margin: 2em;
+
+table{ 
+  margin: auto;
+  padding: 5rem;
 }
-ul {
-  margin-top: 2em;
+
+th{
+  border: solid rgb(187, 63, 49) .5px; 
+  margin: auto;
 }
-li{
-  color: rgb(24, 65, 101);
-  font-size: 18px;
-  padding:.3em;
+
+td{
+  border: solid rgb(187, 63, 49) 1px;
 }
+
+#hourly-sales tr td{
+color: blue;
+padding-top: .5rem;
+padding-bottom: .5rem;
+padding-left: 1rem;
+padding-right: 1rem;
+text-align: center;
+}  
+  
+
 footer{
   display: block;
   margin: auto;
