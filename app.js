@@ -2,6 +2,10 @@
 
 // Store locations with min customers/hour, max customers/hour, and avg cookies per customer
 
+//Daily shop hours
+
+let dailyHours = ['6:00 am','7:00 am','8:00 am','9:00 am','10:00 am','11:00 am','12:00 pm','1:00 pm','2:00 pm','3:00 pm','4:00 pm','5:00 pm','6:00 pm','7:00 pm','8:00 pm'];
+
 // Constructor function
 
 function StoreLocation(site,minCust,maxCust,avgCookies){
@@ -9,7 +13,8 @@ function StoreLocation(site,minCust,maxCust,avgCookies){
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookies = avgCookies;
-  this.randomCookies = Math.round(minCust + Math.random() * (maxCust - minCust));
+  this.hourCookies = [];
+  this.totalCookies = [];
 }
 
 let seattleLocation = new StoreLocation('Seattle', 23, 65, 6.3);
@@ -20,10 +25,6 @@ let limaLocation = new StoreLocation('Lima', 2, 16, 4.6);
 
 let storeLocations = [seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation];
 
-//Daily shop hours
-
-let dailyHours = ['6:00 am','7:00 am','8:00 am','9:00 am','10:00 am','11:00 am','12:00 pm','1:00 pm','2:00 pm','3:00 pm','4:00 pm','5:00 pm','6:00 pm','7:00 pm','8:00 pm'];
-
 // Function to sum an Array
 
 function sumArray (array){
@@ -33,6 +34,7 @@ function sumArray (array){
   });
   return sum;
 }
+
 
 // Daily Hours Table
 
@@ -97,13 +99,13 @@ limaLocation.render();
 // Hourly totals from all stores
 
 
-StoreLocation.prototype.calculateHourTotals = function(){
-  let rowContainer = document.getElementById('hourly-sales');
-  let rowData = document.createElement('tr');
+// StoreLocation.prototype.calculateHourTotals = function(){
+//   let rowContainer = document.getElementById('hourly-sales');
+//   let rowData = document.createElement('tr');
 
-  let allStores = document.createElement('th');
-  allStores.innerText = 'All Stores';
-  rowData.appendChild(allStores);
-};
+//   let allStores = document.createElement('th');
+//   allStores.innerText = 'All Stores';
+//   rowData.appendChild(allStores);
 
-// How to get hourly totals???
+  
+// How to get hourly totals??
