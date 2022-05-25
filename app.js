@@ -39,7 +39,7 @@ function sumArray (array){
 
 // Daily Hours Table
 
-StoreLocation.prototype.renderHours = function(){
+function renderHours(){
   let rowContainer = document.getElementById('hourly-sales');
 
   let rowData = document.createElement('tr');
@@ -58,9 +58,10 @@ StoreLocation.prototype.renderHours = function(){
   let totalCell = document.createElement('td');
   totalCell.innerText = 'Daily Location Total';
   rowData.appendChild(totalCell);
-};
+}
+renderHours();
 
-StoreLocation.prototype.renderHours();
+
 
 // Location Rows for Table - Render function
 
