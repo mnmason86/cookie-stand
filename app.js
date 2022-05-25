@@ -25,6 +25,7 @@ let limaLocation = new StoreLocation('Lima', 2, 16, 4.6);
 
 let storeLocations = [seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation];
 
+let cookieSales = [];
 // Function to sum an Array
 
 function sumArray (array){
@@ -62,11 +63,11 @@ StoreLocation.prototype.renderHours = function(){
 StoreLocation.prototype.renderHours();
 
 // Location Rows for Table - Render function
-let cookieSales = [];
+
+
 StoreLocation.prototype.render = function(){
 
   let bodyContainer = document.getElementById('hourly-sales');
-
   let locationRow = document.createElement('tr');
   bodyContainer.appendChild(locationRow);
 
@@ -77,18 +78,20 @@ StoreLocation.prototype.render = function(){
   for(let j = 0; j < dailyHours.length; j++){
     let custPerHour = Math.round(this.minCust + Math.random() * (this.maxCust - this.minCust));
     let hourCookies = Math.round(custPerHour * this.avgCookies);
-    cookieSales.push(hourCookies);
+    this.hourCookies.push(hourCookies);
 
     let locationData = document.createElement('td');
     locationData.innerText = hourCookies;
     locationRow.appendChild(locationData);
   }
-  sumArray(cookieSales);
+
 
   let locationTotal = document.createElement('td');
-  locationTotal.innerText = sumArray(cookieSales);
+  locationTotal.innerText = sumArray(this.hourCookies);
   locationRow.appendChild(locationTotal);
 };
+
+
 
 seattleLocation.render();
 tokyoLocation.render();
@@ -97,15 +100,28 @@ parisLocation.render();
 limaLocation.render();
 
 // Hourly totals from all stores
+console.log (cookieSales);
+function makeTotalsRow (){
+  let footContainer = document.getElementById('hourly-sales');
+  let tableRow = document.createElement('tr');
+  let tableHeader = document.createElement('th');
+  tableHeader.innerText = 'Hourly Totals For All Stores';
+  tableRow.appendChild(tableHeader);
 
-
-// StoreLocation.prototype.calculateHourTotals = function(){
-//   let rowContainer = document.getElementById('hourly-sales');
-//   let rowData = document.createElement('tr');
-
-//   let allStores = document.createElement('th');
-//   allStores.innerText = 'All Stores';
-//   rowData.appendChild(allStores);
-
-  
-// How to get hourly totals??
+  let totalTotal = 0;
+  for (let i = 0; i < dailyHours.length;i++){
+    let hourlyTotal = 0;
+    for(let j = 0; j < storeLocations.length; j++){
+      hourlyTotal += storeLocations[j].hourCookies[i];
+      totalTotal += storeLocations[j].hourCookies[i];
+    }
+    tableHeader = document.createElement('th');
+    tableHeader.innerText = hourlyTotal;
+    tableRow.appendChild(tableHeader);
+  }
+  tableHeader = document.createElement('th');
+  tableHeader.innerText = totalTotal;
+  tableRow.appendChild(tableHeader);
+  footContainer.appendChild(tableRow);
+}
+makeTotalsRow();
