@@ -1,0 +1,115 @@
+
+header{
+  background-image: url('/img/seattle-skyline-silhouette.png'),  url('/img/seattle-skyline-silhouette.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position-y: center;
+  background-position-x: left, right;
+  background-color: rgb(24, 65, 101);
+  border: 8px antiquewhite;
+  border-style: dashed;
+  color: salmon;
+  font-family: 'Sacramento', cursive;
+  font-size: 80px;
+  text-align: center;
+}
+body{
+  background-color: rgb(212, 213, 222);
+}
+#div1 a{ 
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  padding: .5em;
+  margin: auto 38%;
+  border: 4px rgb(24, 65, 101);
+  border-style: solid;
+  font-size: 24px;
+  background-color: antiquewhite;
+  color: rgb(24, 65, 101);
+  border-radius:20px;
+}
+  
+#div1 p{
+  display: block;
+  color:rgb(24, 65, 101);
+  font-size: 24px;
+  text-align: center;
+  padding: 2em 10em;
+}
+header img{
+  display: block;
+  margin: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+header h1{
+  padding-top: .5em;
+}
+#locations {
+
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
+ padding: 4em 0;
+ background-image: url('/img/texture-background.jpg');
+ background-repeat: no-repeat;
+ background-size: 100% 250px;
+ margin-top: 2em;
+}
+.store{
+  display: block;
+  text-align: center;
+  background-color: rgb(100, 206, 244);
+  margin: 1em;
+  width: 17%;
+  border: 5px antiquewhite dotted;
+  border-radius: 20px;
+
+}
+.site{
+  order:1;
+  font-weight: bold;
+  padding:.5em;
+}
+.address{
+  padding-bottom:.5em;
+  padding-left:.5em;
+  padding-right:.5em;
+}
+#div3{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(242, 205, 59);
+  padding:1.5em;
+  justify-content: space-evenly;
+}
+#hour-head{
+  text-align: center;
+  font-weight: bolder;
+  font-size: larger;
+  padding-bottom: 2em;
+  padding-top: 4em;
+}
+#hours{
+  text-align: center;
+ font-size: larger;
+}
+#fish{
+  border:  4px orangered;
+  border-style: dashed solid;
+  border-radius: 10px;
+}
+#frosted{
+  border:4px orangered;
+  width: 350px;
+  border-style: solid dashed;
+  border-radius: 10px;
+}
+
+footer{
+  display: block;
+  text-align: center;
+  margin: auto;
+  padding: 2em;
+}

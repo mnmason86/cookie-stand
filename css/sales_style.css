@@ -8,8 +8,9 @@ h1{
   margin:auto;
   border: 8px antiquewhite;
   border-style: dashed;
-  padding: 2em;
-  font-size: 45px;
+  padding: .5em;
+  font-family: 'Sacramento', cursive;
+  font-size: 80px;
   text-align: center;
   background-color: rgb(24, 65, 101);
   color: salmon;
@@ -24,9 +25,10 @@ a{
   display: block;
   margin: auto;
   text-align: center;
-  font-size: 20;
+  font-size: 40;
   padding:1em;
   color: rgb(24, 65, 101);
+  font-family: 'Sacramento', cursive;
 }
 h2{
   text-align: center;
