@@ -92,9 +92,13 @@ StoreLocation.prototype.render = function(){
   locationRow.appendChild(locationTotal);
 };
 
+for (let j = 0; j < storeLocations.length; j++){
+  let location = storeLocations[j];
+  location.render();
+}
 
 
-// Hourly totals from all stores
+// Hourly totals from all stores: table footer
 
 function makeTotalsRow (){
   let footContainer = document.getElementById('table');
@@ -120,10 +124,7 @@ function makeTotalsRow (){
   footContainer.appendChild(tableRow);
 }
 
-for (let j = 0; j < storeLocations.length; j++){
-  let location = storeLocations[j];
-  location.render();
-}
+makeTotalsRow();
 
 function addCookieShop(event){
   event.preventDefault();
@@ -141,11 +142,12 @@ function addCookieShop(event){
 
   cookieShop.render();
 
-}
+  document.getElementById('table').deleteTFoot();
 
+  makeTotalsRow();
+}
 document.getElementById('new-cookie-stand').addEventListener('submit', addCookieShop);
 
-makeTotalsRow();
 
 
 
