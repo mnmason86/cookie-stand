@@ -25,7 +25,7 @@ let limaLocation = new StoreLocation('Lima', 2, 16, 4.6);
 
 let storeLocations = [seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation];
 
-let cookieSales = [];
+// let cookieSales = [];
 // Function to sum an Array
 
 function sumArray (array){
@@ -76,7 +76,7 @@ StoreLocation.prototype.render = function(){
   locationCell.innerText = this.site;
   locationRow.appendChild(locationCell);
 
-  for(let j = 0; j < dailyHours.length; j++){
+  for(let i = 0; i < dailyHours.length; i++){
     let custPerHour = Math.round(this.minCust + Math.random() * (this.maxCust - this.minCust));
     let hourCookies = Math.round(custPerHour * this.avgCookies);
     this.hourCookies.push(hourCookies);
@@ -92,16 +92,32 @@ StoreLocation.prototype.render = function(){
   locationRow.appendChild(locationTotal);
 };
 
+// Add new Cookie Shop
 
+for (let j = 0; j < storeLocations.length; j++){
+  let location = storeLocations[j];
+  location.render();
+}
 
-seattleLocation.render();
-tokyoLocation.render();
-dubaiLocation.render();
-parisLocation.render();
-limaLocation.render();
+function addCookieShop(event){
+  event.preventDefault();
+  let form = event.target;
+
+  let site = form['site'].value;
+  let minCust = parseInt(form['minCust'].value);
+  let maxCust = parseInt(form['maxCust'].value);
+  let avgCookies = parseInt(form['avgCookies'].value);
+
+  let cookieShop = new StoreLocation (site, minCust, maxCust, avgCookies);
+
+  storeLocations.push(cookieShop);
+  cookieShop.render();
+}
+
+document.getElementById('new-cookie-stand').addEventListener('submit', addCookieShop);
 
 // Hourly totals from all stores
-console.log (cookieSales);
+
 function makeTotalsRow (){
   let footContainer = document.getElementById('hourly-sales');
   let tableRow = document.createElement('tr');
@@ -125,4 +141,9 @@ function makeTotalsRow (){
   tableRow.appendChild(tableHeader);
   footContainer.appendChild(tableRow);
 }
+
 makeTotalsRow();
+
+
+
+
