@@ -24,23 +24,26 @@
       <table id="table">
       </table>
       <form id="new-cookie-stand">
-        <label>
-          Store Location
+        <h2> Start Your Own Franchise!</h2>
+        <fieldset>
+          <label>
+          Store Location:
           <input type="text" name="site" required="required"/>
-        </label>
-        <label>
-          Minimum Hourly Customers
+          </label>
+          <label>
+          Minimum Hourly Customers:
           <input type="number" name="minCust" required="required" min="2" max="50"/>
-        </label>
-        <label>
-          Maximum Hourly Customers
-          <input type="number" name="maxCust" required="required" min="10" max="99"/>
-        </label>
-        <label>
-          Average Cookies Sold Per Customer
-          <input type="number" name="avgCookies" required="required" min="1" max="10"/>
-        </label>
-        <input type="submit" name="submit"/>
+          </label>
+          <label>
+            Maximum Hourly Customers:
+            <input type="number" name="maxCust" required="required" min="10" max="99"/>
+          </label>
+          <label>
+            Average Cookies Sold Per Customer:
+            <input type="number" name="avgCookies" required="required" min="1" max="10"/>
+          </label>
+          <input id="button" type="submit" name="submit"/>
+        </fieldset>
       </form>
     </main>
     <footer>Copyright &copy; 2022 Mandy Mason</footer>
