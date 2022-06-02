@@ -92,29 +92,7 @@ StoreLocation.prototype.render = function(){
   locationRow.appendChild(locationTotal);
 };
 
-// Add new Cookie Shop
 
-for (let j = 0; j < storeLocations.length; j++){
-  let location = storeLocations[j];
-  location.render();
-}
-
-function addCookieShop(event){
-  event.preventDefault();
-  let form = event.target;
-
-  let site = form['site'].value;
-  let minCust = parseInt(form['minCust'].value);
-  let maxCust = parseInt(form['maxCust'].value);
-  let avgCookies = parseInt(form['avgCookies'].value);
-
-  let cookieShop = new StoreLocation (site, minCust, maxCust, avgCookies);
-
-  storeLocations.push(cookieShop);
-  cookieShop.render();
-}
-
-document.getElementById('new-cookie-stand').addEventListener('submit', addCookieShop);
 
 // Hourly totals from all stores
 
@@ -141,6 +119,31 @@ function makeTotalsRow (){
   tableRow.appendChild(tableHeader);
   footContainer.appendChild(tableRow);
 }
+
+for (let j = 0; j < storeLocations.length; j++){
+  let location = storeLocations[j];
+  location.render();
+}
+
+function addCookieShop(event){
+  event.preventDefault();
+  let form = event.target;
+
+  let site = form['site'].value;
+  let minCust = parseInt(form['minCust'].value);
+  let maxCust = parseInt(form['maxCust'].value);
+  let avgCookies = parseInt(form['avgCookies'].value);
+
+  let cookieShop = new StoreLocation (site, minCust, maxCust, avgCookies);
+
+  storeLocations.push(cookieShop);
+  console.log(storeLocations);
+
+  cookieShop.render();
+
+}
+
+document.getElementById('new-cookie-stand').addEventListener('submit', addCookieShop);
 
 makeTotalsRow();
 
