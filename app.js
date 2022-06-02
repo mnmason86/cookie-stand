@@ -125,6 +125,8 @@ for (let j = 0; j < storeLocations.length; j++){
   location.render();
 }
 
+
+
 function addCookieShop(event){
   event.preventDefault();
   let form = event.target;
@@ -145,7 +147,7 @@ function addCookieShop(event){
 
 document.getElementById('new-cookie-stand').addEventListener('submit', addCookieShop);
 
-makeTotalsRow();
+
 
 
 

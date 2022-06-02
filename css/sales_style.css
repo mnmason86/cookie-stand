@@ -3,55 +3,61 @@ body {
   background-color: rgb(212, 213, 222);
 }
 
-h1{
-  display:block;
-  margin:auto;
+header{
+  background-image: url('/img/seattle-skyline-silhouette.png'),  url('/img/seattle-skyline-silhouette.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position-y: center;
+  background-position-x: left, right;
+  background-color: rgb(24, 65, 101);
   border: 8px antiquewhite;
   border-style: dashed;
-  padding: .5em;
+  color: rgb(239, 94, 41);
   font-family: 'Sacramento', cursive;
   font-size: 80px;
   text-align: center;
-  background-color: rgb(24, 65, 101);
-  color: salmon;
-  border-style: dotted white;
 }
-img{
+header h1{
+  padding-top: .5em;
+}
+header img{
   display: block;
   margin: auto;
-  padding: 1em;
-}
-a{
-  display: block;
-  margin: auto;
-  text-align: center;
-  font-size: 40;
-  padding:1em;
-  color: rgb(24, 65, 101);
-  font-family: 'Sacramento', cursive;
-}
-h2{
-  text-align: center;
-  display:inline;
-  border: 2px antiquewhite;
-  border-style:dashed;
-  margin: 3em;
-  padding:1em;
-  background-color: salmon;
+  padding-top:1rem;
+  padding-bottom: 3rem;
+  height: 150px;
+  width: 400px;
 }
 
-table{ 
+a{
+  font-family: 'Karla', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  padding: .5rem;
+  margin: 2rem 45%;
+  border: 4px rgb(24, 65, 101);
+  border-style: solid;
+  background-color: antiquewhite;
+  color: rgb(24, 65, 101);
+  border-radius:20px;
+}
+
+
+#table{ 
   margin: auto;
   padding: 5rem;
 }
 
 th{
-  border: solid rgb(187, 63, 49) .5px; 
+  border: solid rgb(239, 94, 41) .5px; 
+  border-radius: 20px;
   margin: auto;
 }
 
 td{
-  border: solid rgb(187, 63, 49) 1px;
+  border: solid rgb(242, 205, 59) 1px;
 }
 
 #hourly-sales tr td{
@@ -67,5 +73,7 @@ text-align: center;
 footer{
   display: block;
   margin: auto;
+  padding-top: 3rem;
   text-align: center;
+  color: rgb(24, 65, 101);
 }
