@@ -1,12 +1,10 @@
 'use strict';
 
-// Store locations with min customers/hour, max customers/hour, and avg cookies per customer
-
-//Daily shop hours
+//Daily shop hours ===================================================================
 
 let dailyHours = ['6:00 am','7:00 am','8:00 am','9:00 am','10:00 am','11:00 am','12:00 pm','1:00 pm','2:00 pm','3:00 pm','4:00 pm','5:00 pm','6:00 pm','7:00 pm','8:00 pm'];
 
-// Constructor function
+// Constructor function ===============================================================
 
 function StoreLocation(site,minCust,maxCust,avgCookies){
   this.site = site;
@@ -25,8 +23,7 @@ let limaLocation = new StoreLocation('Lima', 2, 16, 4.6);
 
 let storeLocations = [seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation];
 
-// let cookieSales = [];
-// Function to sum an Array
+// Function to sum an Array =============================================================
 
 function sumArray (array){
   let sum = 0;
@@ -36,8 +33,7 @@ function sumArray (array){
   return sum;
 }
 
-
-// Daily Hours Table
+// Daily Hours Table =====================================================================
 
 function renderHours(){
   let rowContainer = document.getElementById('table');
@@ -59,12 +55,8 @@ function renderHours(){
   totalCell.innerText = 'Daily Location Total';
   rowData.appendChild(totalCell);
 }
-renderHours();
 
-
-
-// Location Rows for Table - Render function
-
+// Location Rows for Table - Render function ==============================================
 
 StoreLocation.prototype.render = function(){
 
@@ -86,19 +78,12 @@ StoreLocation.prototype.render = function(){
     locationRow.appendChild(locationData);
   }
 
-
   let locationTotal = document.createElement('td');
   locationTotal.innerText = sumArray(this.hourCookies);
   locationRow.appendChild(locationTotal);
 };
 
-for (let j = 0; j < storeLocations.length; j++){
-  let location = storeLocations[j];
-  location.render();
-}
-
-
-// Hourly totals from all stores: table footer
+// Hourly totals from all stores: table footer ===============================================
 
 function makeTotalsRow (){
   let footContainer = document.getElementById('table');
@@ -124,7 +109,7 @@ function makeTotalsRow (){
   footContainer.appendChild(tableRow);
 }
 
-makeTotalsRow();
+// Event to add new cookie shop with form ===========================================================
 
 function addCookieShop(event){
   event.preventDefault();
@@ -148,7 +133,14 @@ function addCookieShop(event){
 }
 document.getElementById('new-cookie-stand').addEventListener('submit', addCookieShop);
 
+// Invoke functions to display sales table ===========================================================
 
+renderHours();
+for (let j = 0; j < storeLocations.length; j++){
+  let location = storeLocations[j];
+  location.render();
+}
+makeTotalsRow();
 
 
 
