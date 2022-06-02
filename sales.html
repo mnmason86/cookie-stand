@@ -10,29 +10,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
       <h1>Salmon Cookies Sales</h1>
       <img src="img/salmon.png" height = 100px width = 300px>
-      <a href="index.html">Home</a>
     </header>
     <main>
-      <table>
-        <tablehead>
-          <tr>
-            <th id = "hours-row"></th>
-          </tr>
-        </tablehead>
-          <tbody>
-            <tr id="hourly-sales"></tr>
-          </tbody>
-        <tfoot>
-          <tr>
-            <th id="grand-totals"></th>
-          </tr>
-        </tfoot>
+      <a href="index.html">Home</a>
+      <table id="table">
       </table>
+      <form id="new-cookie-stand">
+        <h2> Start Your Own Franchise!</h2>
+        <fieldset>
+          <label>
+          Store Location:
+          <input type="text" name="site" required="required"/>
+          </label>
+          <label>
+          Minimum Hourly Customers:
+          <input type="number" name="minCust" required="required" min="0" max="10"/>
+          </label>
+          <label>
+            Maximum Hourly Customers:
+            <input type="number" name="maxCust" required="required" min="10" max="99"/>
+          </label>
+          <label>
+            Average Cookies Sold Per Customer:
+            <input type="number" name="avgCookies" required="required" min="1" max="20"/>
+          </label>
+          <input id="button" type="submit" name="submit"/>
+        </fieldset>
+      </form>
     </main>
     <footer>Copyright &copy; 2022 Mandy Mason</footer>
     <script src="app.js"></script>

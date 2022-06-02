@@ -25,7 +25,7 @@ let limaLocation = new StoreLocation('Lima', 2, 16, 4.6);
 
 let storeLocations = [seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation];
 
-let cookieSales = [];
+// let cookieSales = [];
 // Function to sum an Array
 
 function sumArray (array){
@@ -40,7 +40,7 @@ function sumArray (array){
 // Daily Hours Table
 
 function renderHours(){
-  let rowContainer = document.getElementById('hourly-sales');
+  let rowContainer = document.getElementById('table');
 
   let rowData = document.createElement('tr');
 
@@ -49,13 +49,13 @@ function renderHours(){
   rowData.appendChild(blankCell);
 
   for (let i = 0; i < dailyHours.length; i++){
-    let dataCell = document.createElement('td');
+    let dataCell = document.createElement('th');
     dataCell.innerText = dailyHours[i];
     rowData.appendChild(dataCell);
   }
   rowContainer.appendChild(rowData);
 
-  let totalCell = document.createElement('td');
+  let totalCell = document.createElement('th');
   totalCell.innerText = 'Daily Location Total';
   rowData.appendChild(totalCell);
 }
@@ -68,7 +68,7 @@ renderHours();
 
 StoreLocation.prototype.render = function(){
 
-  let bodyContainer = document.getElementById('hourly-sales');
+  let bodyContainer = document.getElementById('table');
   let locationRow = document.createElement('tr');
   bodyContainer.appendChild(locationRow);
 
@@ -76,7 +76,7 @@ StoreLocation.prototype.render = function(){
   locationCell.innerText = this.site;
   locationRow.appendChild(locationCell);
 
-  for(let j = 0; j < dailyHours.length; j++){
+  for(let i = 0; i < dailyHours.length; i++){
     let custPerHour = Math.round(this.minCust + Math.random() * (this.maxCust - this.minCust));
     let hourCookies = Math.round(custPerHour * this.avgCookies);
     this.hourCookies.push(hourCookies);
@@ -92,22 +92,20 @@ StoreLocation.prototype.render = function(){
   locationRow.appendChild(locationTotal);
 };
 
+for (let j = 0; j < storeLocations.length; j++){
+  let location = storeLocations[j];
+  location.render();
+}
 
 
-seattleLocation.render();
-tokyoLocation.render();
-dubaiLocation.render();
-parisLocation.render();
-limaLocation.render();
+// Hourly totals from all stores: table footer
 
-// Hourly totals from all stores
-console.log (cookieSales);
 function makeTotalsRow (){
-  let footContainer = document.getElementById('hourly-sales');
-  let tableRow = document.createElement('tr');
-  let tableHeader = document.createElement('th');
-  tableHeader.innerText = 'Hourly Totals For All Stores';
-  tableRow.appendChild(tableHeader);
+  let footContainer = document.getElementById('table');
+  let tableRow = document.createElement('tfoot');
+  let tableFooter = document.createElement('th');
+  tableFooter.innerText = 'Hourly Totals For All Stores';
+  tableRow.appendChild(tableFooter);
 
   let totalTotal = 0;
   for (let i = 0; i < dailyHours.length;i++){
@@ -116,13 +114,41 @@ function makeTotalsRow (){
       hourlyTotal += storeLocations[j].hourCookies[i];
       totalTotal += storeLocations[j].hourCookies[i];
     }
-    tableHeader = document.createElement('th');
-    tableHeader.innerText = hourlyTotal;
-    tableRow.appendChild(tableHeader);
+    tableFooter = document.createElement('th');
+    tableFooter.innerText = hourlyTotal;
+    tableRow.appendChild(tableFooter);
   }
-  tableHeader = document.createElement('th');
-  tableHeader.innerText = totalTotal;
-  tableRow.appendChild(tableHeader);
+  tableFooter = document.createElement('th');
+  tableFooter.innerText = totalTotal;
+  tableRow.appendChild(tableFooter);
   footContainer.appendChild(tableRow);
 }
+
 makeTotalsRow();
+
+function addCookieShop(event){
+  event.preventDefault();
+  let form = event.target;
+
+  let site = form['site'].value;
+  let minCust = parseInt(form['minCust'].value);
+  let maxCust = parseInt(form['maxCust'].value);
+  let avgCookies = parseInt(form['avgCookies'].value);
+
+  let cookieShop = new StoreLocation (site, minCust, maxCust, avgCookies);
+
+  storeLocations.push(cookieShop);
+  console.log(storeLocations);
+
+  cookieShop.render();
+
+  document.getElementById('table').deleteTFoot();
+
+  makeTotalsRow();
+}
+document.getElementById('new-cookie-stand').addEventListener('submit', addCookieShop);
+
+
+
+
+
