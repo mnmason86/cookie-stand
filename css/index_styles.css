@@ -16,7 +16,7 @@ body{
   background-color: rgb(212, 213, 222);
 }
 #div1 a{ 
-  font-family: 'Karla', sans-serif;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
@@ -36,7 +36,7 @@ body{
   font-size: 24px;
   text-align: center;
   padding: 2em 20em;
-  font-family: 'Karla', sans-serif;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   line-height: 2rem;
 }
 header img{
@@ -150,7 +150,7 @@ h2{
 }
 #div4{
   background-color: rgb(239, 94, 41);
-  font-family:'Karla', sans-serif;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 28px;
 }
 #div4 p{
@@ -200,8 +200,8 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 padding-bottom: 2rem;
-font-family: 'Karla', sans-serif;
-font-size:large
+font-family:Georgia, 'Times New Roman', Times, serif;
+font-size:large;
 }
 h3{
   padding: 1.5rem;
